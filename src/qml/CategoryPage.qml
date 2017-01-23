@@ -149,7 +149,7 @@ Item {
             right: parent.right
             top: parent.top
           }
-          text: "              - это типа категории, который характеризует ваши расходы"
+          text: "          - это типа категории, который характеризует ваши расходы"
           color: "#616161"
           font.pixelSize: 12 * Density.dp
           wrapMode: Text.WordWrap
