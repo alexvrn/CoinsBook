@@ -128,28 +128,31 @@ Item {
 
     Material.PaperTab {
       title: "Счёт"
-      Column {
-        //anchors.fill: parent
-        Item {
+      Item
+      {
+        anchors.fill: parent
+        Text {
+          text: "Счёт"
+          color: "#ffee58"
+          font.bold: true
+          anchors {
+            left: parent.left
+            right: parent.right
+            top: parent.top
+          }
+        }
+        // небольшой костыль. возможно можно как-то граммотно сделать
+        Text {
           id: infoTotalItem
-          //anchors.left: financesTabView.left
-          //anchors.right: financesTabView.right
-          Text {
-            text: "Счёт"
-            color: "#ffee58"
-            font.bold: true
+          anchors {
+            left: parent.left
+            right: parent.right
+            top: parent.top
           }
-          // небольшой костыль. возможно можно как-то граммотно сделать
-          Text {
-            anchors {
-              left: parent.left
-              right: parent.right
-            }
-            text: "              - это типа категории, который характеризует ваши расходы"
-            color: "#616161"
-            font.pixelSize: 12 * Density.dp
-            wrapMode: Text.WordWrap
-          }
+          text: "              - это типа категории, который характеризует ваши расходы"
+          color: "#616161"
+          font.pixelSize: 12 * Density.dp
+          wrapMode: Text.WordWrap
         }
 
         FinancesListView {
@@ -163,7 +166,7 @@ Item {
           financesModel: coinsTotalModel
           financesDelegate: totalDelegate
         }
-      }
+      } // Item
     }
     Material.PaperTab {
       title: "Доход"
@@ -185,27 +188,23 @@ Item {
     }
     Material.PaperTab {
       title: "Расход"
-      Column {
-        //anchors.fill: parent
-        Item {
+      Item {
+        anchors.fill: parent
+        Text {
+          text: "Расход"
+          color: "#f44336"
+          font.bold: true
+        }
+        Text {
           id: textExpenseItem
-          //anchors.left: financesTabView.left
-          //anchors.right: financesTabView.right
-          Text {
-            text: "Расход"
-            color: "#f44336"
-            font.bold: true
+          anchors {
+            left: parent.left
+            right: parent.right
           }
-          Text {
-            anchors {
-              left: parent.left
-              right: parent.right
-            }
-            text: "              - это типа категории, который характеризует ваши расходы"
-            color: "#616161"
-            font.pixelSize: 12 * Density.dp
-            wrapMode: Text.WordWrap
-          }
+          text: "              - это типа категории, который характеризует ваши расходы"
+          color: "#616161"
+          font.pixelSize: 12 * Density.dp
+          wrapMode: Text.WordWrap
         }
 
         FinancesListView {
@@ -219,7 +218,7 @@ Item {
           financesModel: coinsExpenseModel
           financesDelegate: expenseDelegate
         }
-      }
+      }// Item
     }
   }// TabView
 }
